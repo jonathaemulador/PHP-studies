@@ -67,7 +67,7 @@ $foods = array(
     'Ref' => 2.50
 );
 
-// quero algo que custe apenas 3 
+// quero algo que custe apenas 2,5
 
 if (in_array(2.5, $foods)){
     $valorX = in_array(2.5, $foods); // Usei essa varial apenas para perceber que o valor é 1 "verdadeiro"
@@ -81,3 +81,76 @@ if (array_search(5, $foods)){
     $valorY = (array_search(5, $foods));
     print "Temos sim um produto com esse valor é o produto: $valorY" . "\n";
 } else print "Não temos com esse valor";
+
+$usuario = array(
+    'Jonatha' => 123,
+    'Andrea' => 321,
+    'Ada' => 456,
+    'Ivoneide' => 01001
+);
+
+echo "\n \n";
+
+foreach ($usuario as $nome => $senha){
+    print "$nome - $senha" . "\n";
+}
+
+// utilizando unset 
+unset($usuario['Jonatha']);
+
+echo "\n \n";
+
+foreach ($usuario as $nome => $senha){
+    print "$nome - $senha" . "\n";
+}
+
+// mostrar toda a lista do array com implode
+
+$listaPessoas = array('Ada', 'Andrea', 'Bruno', 'Celso');
+
+$mostraLista = implode(' , ', $listaPessoas);
+
+print ("$mostraLista" . "\n");
+
+// utilizanso explode contrario de implode (defina o separador e mostre na posição desejada)
+
+$listaPessoas2 = 'Ada, Andrea, Bruno, Celso';
+
+$mostraLista2 = explode(', ', $listaPessoas2);
+
+print ("mostra lista $mostraLista2[1]" . "\n \n");
+
+// usando sort
+
+
+$veiculos = array('Moto','Carro','Caminhao');
+$veiculosPreco = array('Moto' => 1000,'Carro' => 2000,'Caminhao' => 3000);
+
+echo " ----MOSTRA ARRAY---- \n";
+
+foreach($veiculos as $tipo => $valor){
+    print (" \$veiculos: $tipo  - $valor" . "\n");
+}
+
+echo " ----MOSTRA ARRAY ASSOCIATIVO---- \n";
+
+foreach($veiculosPreco as $tipo => $valor){
+    print (" \$veiculosPreco: $tipo  - $valor" . "\n");
+}
+
+echo "\n";
+
+sort($veiculos);
+sort($veiculosPreco);
+
+echo " ----MOSTRA ARRAY C/SORT---- NÃO HOUVE MUDANÇA \n";
+
+foreach($veiculos as $tipo => $valor){
+    print (" \$veiculos: $tipo  - $valor" . "\n");
+}
+
+echo " ----MOSTRA ARRAY ASSOCIATIVO C/SORT ---- SUBIST. O VALOR STRING POR NUMERICO \n";
+
+foreach($veiculosPreco as $tipo => $valor){
+    print (" \$veiculosPreco: $tipo  - $valor" . "\n");
+}

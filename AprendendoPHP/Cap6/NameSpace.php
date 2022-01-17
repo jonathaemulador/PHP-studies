@@ -11,3 +11,4 @@ class Residencial {
 $mostrar = Residencial::casa(10);
 
 echo($mostrar);
+
